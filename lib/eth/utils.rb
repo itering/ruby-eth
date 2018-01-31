@@ -1,4 +1,4 @@
-module Eth
+module Eth_DEP
   module Utils
 
     extend self

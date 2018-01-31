@@ -1,4 +1,4 @@
-module Eth
+module Eth_DEP
   module Sedes
     include RLP::Sedes
 

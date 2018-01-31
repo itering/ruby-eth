@@ -3,18 +3,18 @@ require 'ffi'
 require 'money-tree'
 require 'rlp'
 
-module Eth
+module Eth_DEP
   BYTE_ZERO = "\x00".freeze
   UINT_MAX = 2**256 - 1
 
-  autoload :Address, 'eth/address'
-  autoload :Gas, 'eth/gas'
-  autoload :Key, 'eth/key'
-  autoload :OpenSsl, 'eth/open_ssl'
-  autoload :Secp256k1, 'eth/secp256k1'
-  autoload :Sedes, 'eth/sedes'
-  autoload :Tx, 'eth/tx'
-  autoload :Utils, 'eth/utils'
+  autoload :Address, 'eth_dep/address'
+  autoload :Gas, 'eth_dep/gas'
+  autoload :Key, 'eth_dep/key'
+  autoload :OpenSsl, 'eth_dep/open_ssl'
+  autoload :Secp256k1, 'eth_dep/secp256k1'
+  autoload :Sedes, 'eth_dep/sedes'
+  autoload :Tx, 'eth_dep/tx'
+  autoload :Utils, 'eth_dep/utils'
 
   class << self
     def configure

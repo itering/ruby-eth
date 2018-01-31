@@ -1,4 +1,4 @@
-module Eth
+module Eth_DEP
   class Key
     autoload :Decrypter, 'eth/key/decrypter'
     autoload :Encrypter, 'eth/key/encrypter'

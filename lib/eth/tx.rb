@@ -1,4 +1,4 @@
-module Eth
+module Eth_DEP
   class Tx
 
     include RLP::Sedes::Serializable

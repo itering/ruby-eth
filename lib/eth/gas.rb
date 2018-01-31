@@ -1,4 +1,4 @@
-module Eth
+module Eth_DEP
   class Gas
 
     GTXCOST = 21000       # TX BASE GAS COST

@@ -1,7 +1,7 @@
 # originally lifted from https://github.com/lian/bitcoin-ruby
 # thanks to everyone there for figuring this out
 
-module Eth
+module Eth_DEP
   class OpenSsl
     extend FFI::Library
 
