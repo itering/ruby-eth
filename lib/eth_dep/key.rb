@@ -1,7 +1,7 @@
 module Eth_DEP
   class Key
-    autoload :Decrypter, 'eth/key/decrypter'
-    autoload :Encrypter, 'eth/key/encrypter'
+    autoload :Decrypter, 'eth_dep/key/decrypter'
+    autoload :Encrypter, 'eth_dep/key/encrypter'
 
     attr_reader :private_key, :public_key
 

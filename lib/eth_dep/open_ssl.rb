@@ -87,7 +87,7 @@ module Eth_DEP
 
         if signature.get_array_of_pointer(0, 2).all?{|i| BN_num_bits(i) <= 256 }
           4.times{|i|
-            head = [ Eth.v_base + i ].pack("C")
+            head = [ Eth_DEP.v_base + i ].pack("C")
             if public_key_hex == recover_public_key_from_signature(hash, [head, r, s].join, i, pubkey_compressed)
               rec_id = i; break
             end
@@ -157,7 +157,7 @@ module Eth_DEP
         return false if signature.bytesize != 65
 
         version = signature.unpack('C')[0]
-        v_base = Eth.replayable_v?(version) ? Eth.replayable_chain_id : Eth.v_base
+        v_base = Eth_DEP.replayable_v?(version) ? Eth_DEP.replayable_chain_id : Eth_DEP.v_base
         return false if version < v_base
 
         recover_public_key_from_signature(hash, signature, (version - v_base), false)

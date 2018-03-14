@@ -25,7 +25,7 @@ Or install it yourself as:
 Create a new public/private key and get its address:
 
 ```ruby
-key = Eth::Key.new
+key = Eth_DEP::Key.new
 key.private_hex
 key.public_hex
 key.address # EIP55 checksummed address
@@ -34,19 +34,19 @@ key.address # EIP55 checksummed address
 Import an existing key:
 
 ```ruby
-old_key = Eth::Key.new priv: private_key
+old_key = Eth_DEP::Key.new priv: private_key
 ```
 
 Or decrypt an [encrypted key](https://github.com/ethereum/wiki/wiki/Web3-Secret-Storage-Definition):
 
 ```ruby
-decrypted_key = Eth::Key.decrypt File.read('./some/path.json'), 'p455w0rD'
+decrypted_key = Eth_DEP::Key.decrypt File.read('./some/path.json'), 'p455w0rD'
 ```
 
 You can also encrypt your keys for use with other ethereum libraries:
 
 ```ruby
-encrypted_key_info = Eth::Key.encrypt key, 'p455w0rD'
+encrypted_key_info = Eth_DEP::Key.encrypt key, 'p455w0rD'
 ```
 
 ### Transactions
@@ -54,7 +54,7 @@ encrypted_key_info = Eth::Key.encrypt key, 'p455w0rD'
 Build a transaction from scratch:
 
 ```ruby
-tx = Eth::Tx.new({
+tx = Eth_DEP::Tx.new({
   data: hex_data,
   gas_limit: 21_000,
   gas_price: 3_141_592,
@@ -67,7 +67,7 @@ tx = Eth::Tx.new({
 Or decode an encoded raw transaction:
 
 ```ruby
-tx = Eth::Tx.decode hex
+tx = Eth_DEP::Tx.decode hex
 ```
 
 Then sign the transaction:
@@ -83,13 +83,13 @@ Get the raw transaction with `tx.hex`, and broadcast it through any Ethereum nod
 Validate an [EIP55](https://github.com/ethereum/EIPs/issues/55) checksummed address:
 
 ```ruby
-Eth::Utils.valid_address? address
+Eth_DEP::Utils.valid_address? address
 ```
 
 Or add a checksum to an existing address:
 
 ```ruby
-Eth::Utils.format_address "0x4bc787699093f11316e819b5692be04a712c4e69" # => "0x4bc787699093f11316e819B5692be04A712C4E69"
+Eth_DEP::Utils.format_address "0x4bc787699093f11316e819b5692be04a712c4e69" # => "0x4bc787699093f11316e819B5692be04A712C4E69"
 ```
 
 ### Configure
@@ -97,7 +97,7 @@ Eth::Utils.format_address "0x4bc787699093f11316e819b5692be04a712c4e69" # => "0x4
 In order to prevent replay attacks, you must specify which Ethereum chain your transactions are created for. See [EIP 155](https://github.com/ethereum/EIPs/issues/155) for more detail.
 
 ```ruby
-Eth.configure do |config|
+Eth_DEP.configure do |config|
   config.chain_id = 1 # nil by default, meaning valid on any chain
 end
 ```

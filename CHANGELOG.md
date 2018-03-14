@@ -22,10 +22,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [0.4.3]
 
 ### Added
-- Eth::Key::Encrypter class to handle encrypting keys.
-- Eth::Key.encrypt as a nice wrapper around Encrypter class.
-- Eth::Key::Decrypter class to handle encrypting keys.
-- Eth::Key.decrypt as a nice wrapper around Decrypter class.
+- Eth_DEP::Key::Encrypter class to handle encrypting keys.
+- Eth_DEP::Key.encrypt as a nice wrapper around Encrypter class.
+- Eth_DEP::Key::Decrypter class to handle encrypting keys.
+- Eth_DEP::Key.decrypt as a nice wrapper around Decrypter class.
 
 ## [0.4.2]
 

@@ -1,8 +1,8 @@
 require 'json'
 require 'scrypt'
 
-class Eth::Key::Decrypter
-  include Eth::Utils
+class Eth_DEP::Key::Decrypter
+  include Eth_DEP::Utils
 
   def self.perform(data, password)
     new(data, password).perform

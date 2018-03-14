@@ -99,11 +99,11 @@ module Eth_DEP
     end
 
     def data
-      Eth.tx_data_hex? ? data_hex : data_bin
+      Eth_DEP.tx_data_hex? ? data_hex : data_bin
     end
 
     def data=(string)
-      Eth.tx_data_hex? ? self.data_hex=(string) : self.data_bin=(string)
+      Eth_DEP.tx_data_hex? ? self.data_hex=(string) : self.data_bin=(string)
     end
 
 
@@ -137,11 +137,11 @@ module Eth_DEP
     end
 
     def unsigned
-      Tx.new to_h.merge(v: Eth.chain_id, r: 0, s: 0)
+      Tx.new to_h.merge(v: Eth_DEP.chain_id, r: 0, s: 0)
     end
 
     def sedes
-      if Eth.prevent_replays? && !(Eth.replayable_v? v)
+      if Eth_DEP.prevent_replays? && !(Eth_DEP.replayable_v? v)
         self.class
       else
         UnsignedTx

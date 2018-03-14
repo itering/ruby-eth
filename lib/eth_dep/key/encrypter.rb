@@ -1,7 +1,7 @@
 require 'json'
 
-class Eth::Key::Encrypter
-  include Eth::Utils
+class Eth_DEP::Key::Encrypter
+  include Eth_DEP::Utils
 
   def self.perform(key, password, options = {})
     new(key, options).perform(password)
@@ -121,7 +121,7 @@ class Eth::Key::Encrypter
   end
 
   def address
-    Eth::Key.new(priv: key).address
+    Eth_DEP::Key.new(priv: key).address
   end
 
 end
